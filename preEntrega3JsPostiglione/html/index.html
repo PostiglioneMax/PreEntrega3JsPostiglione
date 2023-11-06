@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Meal Tracker</title>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    </head>
+    <body>
+        <div class="logo">
+            <img src="#" alt="Logo de la marca" />
+        </div>
+        <h1>Track your macros</h1>
+
+        <div class="foodOptions">
+            <h3>Pick a food</h3>
+            <select id="foodSelect">
+                <option value="">Choose your food</option>
+                <option value="Eggs">Eggs</option>
+                <option value="Oats">Oats</option>
+                <option value="Banana">Banana</option>
+                <option value="Manzana">Manzana</option>
+            </select>
+            <input type="number" id="foodQuantity" placeholder="Grams" />
+            <button class="btn" onclick="addSelectedFoodToMeal('breakfast')">Add to Breakfast</button>
+            <button class="btn" onclick="addSelectedFoodToMeal('lunch')">Add to Lunch</button>
+            <button class="btn" onclick="addSelectedFoodToMeal('dinner')">Add to Dinner</button>
+            <button class="btn" onclick="addSelectedFoodToMeal('snacks')">Add to Snacks</button>
+        </div>
+
+        <!-- Agregar custeom foods -->
+        <div class="add-food">
+            <h3>Customize your foods</h3>
+            <p>Make that specific food and input all It's nutrition facts</p>
+            <div class="customFoodForm">
+                <input type="text" id="foodName" placeholder="Food Name" />
+                <input type="number" id="calories" placeholder="Calories" />
+                <input type="number" id="carbs" placeholder="Carbs (g)" />
+                <input type="number" id="proteins" placeholder="Proteins (g)" />
+                <input type="number" id="fats" placeholder="Fats (g)" />
+                <button onclick="addCustomFoodToMyFoods()">Add to MyFoods</button>
+            </div>
+        </div>
+
+        <!-- Listas -->
+        <div class="food-list">
+            <h3>MyFoods</h3>
+            <select id="myFoodsListBreakfast"></select>
+            <button onclick="addMyFoodsToMeal('breakfast')">Add to Breakfast</button>
+            <select id="myFoodsListLunch"></select>
+            <button onclick="addMyFoodsToMeal('lunch')">Add to Lunch</button>
+            <select id="myFoodsListDinner"></select>
+            <button onclick="addMyFoodsToMeal('dinner')">Add to Dinner</button>
+            <select id="myFoodsListSnacks"></select>
+            <button onclick="addMyFoodsToMeal('snacks')">Add to Snacks</button>
+            <h3>Breakfast</h3>
+            <ul id="breakfastList"></ul>
+            <h3>Lunch</h3>
+            <ul id="lunchList"></ul>
+            <h3>Dinner</h3>
+            <ul id="dinnerList"></ul>
+            <h3>Snacks</h3>
+            <ul id="snacksList"></ul>
+        </div>
+
+        <!-- Totals de nutr del dia -->
+        <div class="total-nutrition">
+            <h3>Breakfast Nutrition Facts</h3>
+            <p>Calories: <span id="breakfastCalories">0</span></p>
+            <p>Carbs: <span id="breakfastCarbs">0</span> g</p>
+            <p>Proteins: <span id="breakfastProteins">0</span> g</p>
+            <p>Fats: <span id="breakfastFats">0</span> g</p>
+            <h3>Lunch Nutrition Facts</h3>
+            <p>Calories: <span id="lunchCalories">0</span></p>
+            <p>Carbs: <span id="lunchCarbs">0</span> g</p>
+            <p>Proteins: <span id="lunchProteins">0</span> g</p>
+            <p>Fats: <span id="lunchFats">0</span> g</p>
+            <h3>Dinner Nutrition Facts</h3>
+            <p>Calories: <span id="dinnerCalories">0</span></p>
+            <p>Carbs: <span id="dinnerCarbs">0</span> g</p>
+            <p>Proteins: <span id="dinnerProteins">0</span> g</p>
+            <p>Fats: <span id="dinnerFats">0</span> g</p>
+            <h3>Snacks Nutrition Facts</h3>
+            <p>Calories: <span id="snacksCalories">0</span></p>
+            <p>Carbs: <span id="snacksCarbs">0</span> g</p>
+            <p>Proteins: <span id="snacksProteins">0</span> g</p>
+            <p>Fats: <span id="snacksFats">0</span> g</p>
+        </div>
+
+        <div class="total-nutrition">
+            <h3>Total Nutrition Facts</h3>
+            <p>Calorías: <span id="totalCalories">0</span></p>
+            <p>Carbohidratos: <span id="totalCarbs">0</span> g</p>
+            <p>Proteínas: <span id="totalProteins">0</span> g</p>
+            <p>Grasas: <span id="totalFats">0</span> g</p>
+        </div>
+
+        <script src="../javascript/scripts.js"></script>
+    </body>
+</html>
